@@ -50,7 +50,7 @@ body {
 
 .home {
     height: 100vh;
-    background: url('../images/background.svg') no-repeat;
+    background: url('Regular dev_20241024_135640_0000.jpg') no-repeat;
     background-size: cover;
     background-position: center;
     display: flex;
