@@ -12,3 +12,5 @@ navLinks.forEach(link => {
  'smooth' });
   });
 });
+
+//teste commit
