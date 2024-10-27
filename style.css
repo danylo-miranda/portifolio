@@ -215,8 +215,8 @@ body {
 }
 
 .home-servicos {
-    height: 100vh;
-    background: black;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,0,0,1) 100%);
     background-size: cover;
     background-position: center;
     display: flex;
@@ -225,9 +225,12 @@ body {
 }
 
 .video-container {
-    display: grid;
+    display: ruby-text-container;
     grid-template-columns: repeat(3, 1fr); /* Three columns with equal width */
-    gap: 1%; /* Space between video items */
+    gap: 10%; /* Space between video items */
+    margin-top: 15%;
+    margin-bottom: 30%;
+    justify-content: space-around;
 }
   
 .video-item {
