@@ -27,7 +27,7 @@ body {
 
 .logo {
     position: relative;
-    font-size: 10%;
+    font-size: 20%;
     color: #ededed;
     text-decoration: none;
     font-weight: 600;
@@ -214,3 +214,47 @@ body {
     }
 }
 
+.home-servicos {
+    height: 100vh;
+    background: black;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    padding: 2 1%;
+}
+
+.video-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Three columns with equal width */
+    gap: 1%; /* Space between video items */
+}
+  
+.video-item {
+    border: 1px solid #ccc;
+    padding: 5%;
+    text-align: center;
+    position: relative; /* Required for aspect ratio box */
+}
+
+.video-item iframe {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.video-item iframe {
+    padding-bottom: 10%; /* 16:9 aspect ratio */
+}
+
+.grid-item {
+    text-align: center;
+    color: white;
+  }
+  
+.grid-item p:last-child {
+    font-weight: bold;
+    font-size: 1.2em;
+}
