@@ -1,6 +1,6 @@
 
 var typed = new Typed('#typed-text', {
-    strings: ['Analista de E-commerce', 'Desenvolvedor Python', 'GenAI Developer'],
+    strings: ['Dev Python', 'GenAI Developer', 'Data Analyst'],
     typeSpeed: 50,
     backSpeed: 50,
     loop: true
