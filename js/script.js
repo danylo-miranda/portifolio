@@ -1,16 +1,6 @@
-// Exemplo: Adicionar um efeito de rolagem suave ao clicar nos links da navegação
-const sections = document.querySelectorAll('section');
-const navLinks = document.querySelectorAll('nav a');
-
-navLinks.forEach(link => {
-  link.addEventListener('click',   
- (e) => {
-    e.preventDefault();
-    const targetId = link.getAttribute('href').substring(1);
-    const targetSection = document.getElementById(targetId);
-    targetSection.scrollIntoView({ behavior:   
- 'smooth' });
-  });
+var typed = new Typed('#typed-text', {
+  strings: ['Analista de E-commerce', 'Desenvolvedor Python', 'Analista de Marketing'],
+  typeSpeed: 50,
+  backSpeed: 50,
+  loop: true
 });
-
-//teste commit

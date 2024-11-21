@@ -50,7 +50,7 @@ body {
 
 .home {
     height: 100vh;
-    background: url('Regular dev_20241024_135640_0000.jpg') no-repeat;
+    background-color: #000000;
     background-size: cover;
     background-position: center;
     display: flex;
@@ -60,6 +60,10 @@ body {
 
 .home-content {
     max-width: 600px;
+    position: relative;
+    bottom: 1%; /* Ajuste para onde deseja posicionar */
+    left: 28%;
+    transform: translateX(-50%);
 }
 
 .home-content h1 {
@@ -85,11 +89,14 @@ body {
 
 .home-sci {
     position: absolute;
-    bottom: 0.9px;
-    width: 170px;
+    bottom: 3%;
+    left: 14%;
+    width: auto; /* Remova a largura fixa para que os ícones se ajustem dinamicamente */
     display: flex;
-    justify-content: space-between;
+    justify-content: center; /* Centraliza o grupo de ícones */
+    gap: 10px; /* Define o espaço entre os ícones */
 }
+
 
 .home-sci a {
     position: relative;
@@ -127,6 +134,12 @@ body {
 
 .home-sci a:hover::before {
     width: 100%;
+}
+
+@media (max-width: 768px) {
+    .home-sci {
+        gap: 10px; /* Reduz o espaço em telas menores */
+    }
 }
 
 .home-content .btn-box {
@@ -214,57 +227,106 @@ body {
     }
 }
 
-.home-servicos {
-    height: 100%;
-    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,0,0,1) 100%);
-    background-size: cover;
-    background-position: center;
-    display: flex;
-    align-items: center;
-    padding: 2 1%;
-}
-
-.video-container {
-    display: ruby-text-container;
-    grid-template-columns: repeat(3, 1fr); /* Three columns with equal width */
-    gap: 10%; /* Space between video items */
-    margin-top: 15%;
-    margin-bottom: 30%;
-    justify-content: space-around;
-}
-  
-.video-item {
-    border: 1px solid #ccc;
-    padding: 5%;
+.sections {
+    background-color: #000000;
     text-align: center;
-    position: relative; /* Required for aspect ratio box */
+    padding: 50px;
+    color: #ffffff;
 }
 
-.video-item iframe {
-    position: relative;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+.imagem-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Três colunas iguais */
+    gap: 20px; /* Espaço entre as imagens */
+    margin-top: 20px;
 }
 
-.video-item iframe {
-    padding-bottom: 10%; /* 16:9 aspect ratio */
+.imagem-container img {
+    width: 100%; /* As imagens ocupam 100% do espaço da coluna */
+    height: auto; /* Mantém a proporção das imagens */
+    border-radius: 8px; /* Opcional: cantos arredondados */
 }
 
-.grid-item {
-    text-align: center;
-    color: white;
-  }
-  
-.grid-item p:last-child {
-    font-weight: bold;
-    font-size: 1.2em;
-}
-
-/* Media Queries for Responsive Design */
+/* Ajustes para dispositivos móveis */
 @media (max-width: 768px) {
-    .video-container {
-        grid-template-columns: 1fr;
+    .imagem-container {
+        grid-template-columns: repeat(2, 1fr); /* Duas colunas em tablets */
+    }
+}
+
+@media (max-width: 480px) {
+    .imagem-container {
+        grid-template-columns: 1fr; /* Uma coluna em dispositivos muito pequenos */
+    }
+}
+
+.footer {
+    background-color: #000000;
+    color: #ffffff;
+    padding: 40px 10%;
+    text-align: center;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.footer-about,
+.footer-links,
+.footer-social {
+    flex: 1 1 300px; /* Ajusta o layout para ser responsivo */
+}
+
+.footer-about p,
+.footer-links ul,
+.footer-links li {
+    margin: 10px 0;
+}
+
+.footer-links ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.footer-links a:hover {
+    color: #00abf0;
+}
+
+.footer-social .footer-sci a {
+    margin: 0 10px;
+    color: #00abf0;
+    font-size: 24px;
+    transition: color 0.3s ease;
+}
+
+.footer-social .footer-sci a:hover {
+    color: #ffffff;
+}
+
+.footer-bottom {
+    margin-top: 20px;
+    font-size: 14px;
+    border-top: 1px solid #333333;
+    padding-top: 10px;
+}
+
+@media (max-width: 768px) {
+    .footer-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-about,
+    .footer-links,
+    .footer-social {
+        text-align: center;
     }
 }
