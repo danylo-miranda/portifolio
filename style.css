@@ -61,9 +61,11 @@ body {
 .home-content {
     max-width: 600px;
     position: relative;
-    bottom: 1%; /* Ajuste para onde deseja posicionar */
+    bottom: 1%;
     left: 28%;
     transform: translateX(-50%);
+    /* Adicione a margem responsiva para telas pequenas */
+    padding: 0 15px; /* Para garantir que o conteúdo não fique colado nas bordas em dispositivos móveis */
 }
 
 .home-content h1 {
@@ -80,12 +82,55 @@ body {
     color: #00abf0;
 }
 
-
 .home-content p {
     position: relative;
     font-size: 16px;
     margin: 20px 0 40px;
 }
+
+/* Media Queries para responsividade */
+@media (max-width: 1024px) {
+    .home-content {
+        max-width: 90%; /* Reduz a largura para 90% em telas menores */
+        left: 50%; /* Centraliza horizontalmente */
+        transform: translateX(-50%);
+    }
+
+    .home-content h1 {
+        font-size: 48px; /* Reduz o tamanho da fonte para telas menores */
+    }
+
+    .home-content h3 {
+        font-size: 28px; /* Reduz o tamanho da fonte para telas menores */
+    }
+
+    .home-content p {
+        font-size: 14px; /* Diminui o tamanho do texto em telas pequenas */
+    }
+}
+
+@media (max-width: 768px) {
+    .home-content {
+        max-width: 90%; /* Aumenta a largura para 90% em telas ainda menores */
+        left: 50%;
+        transform: translateX(-50%);
+        padding: 0 10px; /* Adiciona um pouco mais de espaçamento nas laterais */
+    }
+
+    .home-content h1 {
+        font-size: 36px; /* Reduz ainda mais o tamanho da fonte */
+    }
+
+    .home-content h3 {
+        font-size: 24px;
+    }
+
+    .home-content p {
+        font-size: 12px; /* Reduz o tamanho do texto */
+        margin: 15px 0 30px;
+    }
+}
+
 
 .home-sci {
     position: absolute;
