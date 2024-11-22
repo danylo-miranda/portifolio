@@ -260,6 +260,14 @@ body {
     width: 100%;
 }
 
+@media (max-width: 480px) {
+    .btn-box a {
+        width: 120px; /* Reduz a largura do botão */
+        font-size: 14px; /* Ajusta o tamanho do texto */
+    }
+}
+
+
 @keyframes showRight {
     100% {
         width: 0;
@@ -270,6 +278,13 @@ body {
     100% {
         pointer-events: auto;
     }
+}
+
+.sobre {
+    background-color: #000000;
+    text-align: right;
+    padding: 50px;
+    color: #ffffff;
 }
 
 .sections {
@@ -291,6 +306,46 @@ body {
     height: auto; /* Mantém a proporção das imagens */
     border-radius: 8px; /* Opcional: cantos arredondados */
 }
+
+.sobre-mim-container {
+    display: flex;
+    align-items: center; /* Centraliza verticalmente */
+    gap: 20px; /* Espaçamento entre a imagem e o texto */
+    margin-top: 20px;
+}
+
+.zoom-foto {
+    width: 550px; /* Ajuste o tamanho da imagem */
+    height: auto; /* Mantém a proporção */
+    border-radius: 50%; /* Deixa a imagem redonda */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Adiciona sombra para destacar */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.zoom-foto:hover {
+    transform: scale(1.1); /* Aumenta 10% */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3); /* Adiciona sombra */
+}
+
+.perfil-descricao {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #ffffff; /* Cor do texto */
+    text-align: justify; /* Justifica o texto */
+}
+
+/* Ajuste para dispositivos móveis */
+@media (max-width: 768px) {
+    .sobre-mim-container {
+        flex-direction: column; /* Empilha imagem e texto */
+        text-align: center; /* Centraliza texto para dispositivos móveis */
+    }
+
+    .perfil-foto {
+        margin-bottom: 15px; /* Espaço entre imagem e texto no empilhamento */
+    }
+}
+
 
 /* Ajustes para dispositivos móveis */
 @media (max-width: 768px) {
