@@ -39,7 +39,7 @@ body {
     color: #ededed;
     text-decoration: none;
     font-weight: 500;
-    margin-left: 35px;
+    margin-left: 15px;
     transition: 2s;
 }
 
@@ -299,6 +299,13 @@ body {
     grid-template-columns: repeat(3, 1fr); /* Três colunas iguais */
     gap: 20px; /* Espaço entre as imagens */
     margin-top: 20px;
+    padding: 0 10px; /* Adiciona padding lateral para evitar imagens coladas na borda */
+}
+
+/* Ajustes adicionais para evitar quebra */
+img {
+    max-width: 100%; /* Garante que as imagens nunca ultrapassem o container */
+    height: auto; /* Mantém a proporção */
 }
 
 .imagem-container img {
@@ -339,10 +346,6 @@ body {
     .sobre-mim-container {
         flex-direction: column; /* Empilha imagem e texto */
         text-align: center; /* Centraliza texto para dispositivos móveis */
-    }
-
-    .perfil-foto {
-        margin-bottom: 15px; /* Espaço entre imagem e texto no empilhamento */
     }
 }
 
