@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Danylo Miranda</title>
+    <title>Orçamento</title>
     <link rel="stylesheet" href="style.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
@@ -16,21 +16,23 @@
         <nav class="navbar">
             <a href="index.html">Inicio</a>
     </header>
-    <form method="post" class="formulario" autocomplete="on" onsubmit="return validarFormulario()" action="#">
-        <h3>Marketing Digital</h3>
-        <p>Design de imagens</p>
-        <input type="checkbox" name="Banner-site[]" value="Banner"> Banner responsivo para sites <br>
-        <input type="checkbox" name="Redes Sociais[]" value="Flyer"> Flyer's para Redes Sociais <br>
-        <input type="checkbox" name="Foto-capa[]" value="Capa"> Foto de capa <br>
-        <input type="checkbox" name="Foto-perfil[]" value="Perfil"> Imagem para perfil profissional <br>
-        <h3>Recursos de I.A</h3>
-        <p>Gostaria de adicionar recursos de I.A Generativa ?</p>
-        <input type="radio" name="i.a[]" value="sim"> Sim<br>
-        <input type="radio" name="i.a[]" value="não"> Não<br>
-        <label>E-mail: </label><input type="email" name="E-mail" id="email"><br>
-        <span id="email-error" style="color: red; display: none;"></span>
-        <button type="submit">Enviar</button>
-    </form>
+    <section class="home">
+        <form method="post" class="formulario" autocomplete="on" onsubmit="return validarFormulario()" action="#">
+            <h3>Marketing Digital</h3>
+            <p>Design de imagens</p>
+            <input type="checkbox" name="Banner-site[]" value="Banner"> Banner responsivo para sites <br>
+            <input type="checkbox" name="Redes Sociais[]" value="Flyer"> Flyer's para Redes Sociais <br>
+            <input type="checkbox" name="Foto-capa[]" value="Capa"> Foto de capa <br>
+            <input type="checkbox" name="Foto-perfil[]" value="Perfil"> Imagem para perfil profissional <br>
+            <h3>Recursos de I.A</h3>
+            <p>Gostaria de adicionar recursos de I.A Generativa ?</p>
+            <input type="radio" name="i.a[]" value="sim"> Sim<br>
+            <input type="radio" name="i.a[]" value="não"> Não<br>
+            <label>E-mail: </label><input type="email" name="E-mail" id="email"><br>
+            <span id="email-error" style="color: red; display: none;"></span>
+            <button type="submit">Enviar</button>
+        </form>
+    </section>
     <script>
         function validarFormulario() {
             let email = document.getElementById('email').value;
@@ -55,11 +57,6 @@
     </script>
     <footer class="footer">
         <div class="footer-container">
-            <div class="footer-about">
-                <h3>Sobre</h3>
-                <p>Sou Danylo Miranda, unificando negócios e tecnologia. Entre em contato para discutir como posso ajudar em seus projetos.</p>
-            </div>
-
             <div class="footer-social">
                 <h3>Redes Sociais</h3>
                 <div class="footer-sci">
