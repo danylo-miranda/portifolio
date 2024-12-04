@@ -17,44 +17,8 @@
             <a href="index.html">Inicio</a>
     </header>
     <section class="home">
-        <form method="post" class="formulario" autocomplete="on" onsubmit="return validarFormulario()" action="#">
-            <h3>Marketing Digital</h3>
-            <p>Design de imagens</p>
-            <input type="checkbox" name="Banner-site[]" value="Banner"> Banner responsivo para sites <br>
-            <input type="checkbox" name="Redes Sociais[]" value="Flyer"> Flyer's para Redes Sociais <br>
-            <input type="checkbox" name="Foto-capa[]" value="Capa"> Foto de capa <br>
-            <input type="checkbox" name="Foto-perfil[]" value="Perfil"> Imagem para perfil profissional <br>
-            <h3>Recursos de I.A</h3>
-            <p>Gostaria de adicionar recursos de I.A Generativa ?</p>
-            <input type="radio" name="i.a[]" value="sim"> Sim<br>
-            <input type="radio" name="i.a[]" value="não"> Não<br>
-            <label>E-mail: </label><input type="email" name="E-mail" id="email"><br>
-            <span id="email-error" style="color: red; display: none;"></span>
-            <button type="submit">Enviar</button>
-        </form>
+        <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSc4Ocy4BWAaW4JhycconRuKwyLUpLhp7OAcMI_sXLyZ3toSYw/viewform?embedded=true" width="700" height="520" frameborder="0" marginheight="0" marginwidth="0">Carregando…</iframe>
     </section>
-    <script>
-        function validarFormulario() {
-            let email = document.getElementById('email').value;
-            let emailError = document.getElementById('email-error');
-
-            // Regular expression for email validation
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-            if (email === '') {
-                emailError.textContent = 'Por favor, preencha o campo de e-mail.';
-                emailError.style.display = 'block';
-                return false;
-            } else if (!emailRegex.test(email)) {
-                emailError.textContent = 'Por favor, insira um endereço de e-mail válido.';
-                emailError.style.display = 'block';
-                return false;
-            } else {
-                emailError.style.display = 'none';
-                return true;
-            }
-        }
-    </script>
     <footer class="footer">
         <div class="footer-container">
             <div class="footer-social">
