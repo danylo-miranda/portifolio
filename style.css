@@ -433,3 +433,11 @@ img {
         text-align: center;
     }
 }
+
+.formulario {
+    justify-items: flex-start;
+    gap: 20px;
+    margin-top: 5%;
+    margin-left: 5%;
+    color: #000000;
+}
