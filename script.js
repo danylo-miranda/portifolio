@@ -1,11 +1,35 @@
+// Menu hamburguer
+const menuBtn = document.querySelector('.menu-btn');
+const navLinks = document.querySelector('.nav-links');
 
-var typed = new Typed('#typed-text', {
-    strings: ['Dev Python', 'Gen A.I Developer', 'Data Analyst'],
-    typeSpeed: 50,
-    backSpeed: 50,
+menuBtn.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+    menuBtn.classList.toggle('active');
+});
+
+// Fechar menu ao clicar em um link
+document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+        navLinks.classList.remove('active');
+        menuBtn.classList.remove('active');
+    });
+});
+
+// Fechar menu ao clicar fora
+document.addEventListener('click', (e) => {
+    if (!navLinks.contains(e.target) && !menuBtn.contains(e.target)) {
+        navLinks.classList.remove('active');
+        menuBtn.classList.remove('active');
+    }
+});
+
+// Typed.js
+const typed = new Typed('#typed-text', {
+    strings: ['Analista de Dados', 'Gestor de E-commerce', 'Web Dev'],
+    typeSpeed: 100,
+    backSpeed: 60,
     loop: true
-  });
-
+});
 
 document.addEventListener("DOMContentLoaded", () => {
     const navbarLinks = document.querySelectorAll(".navbar a");

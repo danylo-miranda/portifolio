@@ -1,13 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self' https:; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://unpkg.com; img-src 'self' data: https:; font-src 'self' https://fonts.gstatic.com https://unpkg.com; connect-src 'self' https://www.google-analytics.com;">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="X-Frame-Options" content="DENY">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    <meta name="robots" content="index, follow">
+    <meta name="description" content="Portfólio profissional de Danylo Miranda - Especialista em E-commerce, SEO e Análise de Dados">
     <title>Danylo Miranda</title>
     <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KFVBB2GZE2"></script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-KFVBB2GZE2" rel="noopener noreferrer"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
         function gtag(){dataLayer.push(arguments);}
@@ -15,9 +21,14 @@
 
         gtag('config', 'G-KFVBB2GZE2');
 
-        // Função para rastrear eventos
+        // Função para rastrear eventos com sanitização
         function trackEvent(eventName, eventParams = {}) {
-            gtag('event', eventName, eventParams);
+            // Sanitiza os parâmetros para evitar XSS
+            const sanitizedParams = {};
+            for (const [key, value] of Object.entries(eventParams)) {
+                sanitizedParams[key] = String(value).replace(/[<>]/g, '');
+            }
+            gtag('event', eventName, sanitizedParams);
         }
 
         // Rastrear cliques no botão Agendar
@@ -70,18 +81,23 @@
         });
     </script>
     <link rel="stylesheet" href="style.css">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet' integrity="sha384-..." crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12" integrity="sha384-..." crossorigin="anonymous"></script>
     
 </head>
 
 <body>
     <header class="header">
         <nav class="navbar">
-            <a href="index.html">Inicio</a>
-            <a href="#sobre-mim">Sobre</a>
-            <a href="#servicos">Serviços</a>
-            <a href="#projetos">Projetos</a>
+            <div class="menu-btn">
+                <i class='bx bx-menu'></i>
+            </div>
+            <div class="nav-links">
+                <a href="index.html">Inicio</a>
+                <a href="#sobre-mim">Sobre</a>
+                <a href="#servicos">Serviços</a>
+                <a href="#projetos">Projetos</a>
+            </div>
         </nav>
     </header>
     <section class="home">
@@ -93,15 +109,15 @@
             <script src="script.js"></script>
             <p>De dados a estratégias: impulsionando resultados com inovação e inteligência.</p>
             <div class="btn-box">
-                <a href="https://api.whatsapp.com/send/?phone=5516998590133&text&type=phone_number&app_absent=0" target="_blank">Agendar</a>            
+                <a href="https://api.whatsapp.com/send/?phone=5516998590133&text&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer">Agendar</a>            
             </div>
         </div>
         <div class="home-sci">
-            <a href="https://www.linkedin.com/in/adm-danylo-miranda/" target="_blank"><i class='bx bxl-linkedin-square'></i></a>
-            <a href="https://twitter.com/MirandaDanylo" target="_blank"><i class='bx bxl-twitter'></i></a>
-            <a href="https://github.com/danylo-miranda" target="_blank"><i class='bx bxl-github'></i></i></a>
-            <a href="https://api.whatsapp.com/send/?phone=5516998590133&text&type=phone_number&app_absent=0" target="_blank"><i class='bx bxl-whatsapp'></i></i></a>
-            <a href="https://www.cloudskillsboost.google/public_profiles/62cbea2e-5ec6-4b03-9b28-475760aa420c" target="_blank"><i class='bx bxl-google'></i></i></a>
+            <a href="https://www.linkedin.com/in/adm-danylo-miranda/" target="_blank" rel="noopener noreferrer"><i class='bx bxl-linkedin-square'></i></a>
+            <a href="https://twitter.com/MirandaDanylo" target="_blank" rel="noopener noreferrer"><i class='bx bxl-twitter'></i></a>
+            <a href="https://github.com/danylo-miranda" target="_blank" rel="noopener noreferrer"><i class='bx bxl-github'></i></i></a>
+            <a href="https://api.whatsapp.com/send/?phone=5516998590133&text&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer"><i class='bx bxl-whatsapp'></i></i></a>
+            <a href="https://www.cloudskillsboost.google/public_profiles/62cbea2e-5ec6-4b03-9b28-475760aa420c" target="_blank" rel="noopener noreferrer"><i class='bx bxl-google'></i></i></a>
         </div>
         <span class="home-imgHover"></span>
     </section>
@@ -116,7 +132,7 @@
     </section>
     
     <section class="sections" id="servicos">
-        <h2>Serviços</h2>
+        <h2>Serviços para o seu E-commerce</h2>
         <p>Potencialize seu e-commerce com gestão estratégica! Otimização de vendas, análise de dados, melhorias na experiência do cliente e planejamento para alcançar resultados expressivos no mercado online."</p>
         <div class="imagem-container">
             <div class="imagem-item">
@@ -137,24 +153,58 @@
         <h2>Projetos Recentes</h2>
         <div class="imagem-container">
             <div class="imagem-item">
-                <a href="https://ferraciolioficial.com.br/" target="_blank">
-                    <img src="ferracioli-2025.jpg" alt="Imagem 1" class="zoom-foto">
+                <a href="https://ferraciolioficial.com.br/" target="_blank" rel="noopener noreferrer">
+                    <img src="ferracioli-2025.jpg" alt="Loja de Calçados Femininos" class="zoom-foto">
                 </a>
                 <p>Loja de Calçados Femininos</p>
             </div>
             <div class="imagem-item">
-                <a href="https://github.com/danylo-miranda/ETL-crypto.git" target="_blank">
-                    <img src="etl.gif" alt="Imagem 1" class="zoom-foto">
+                <a href="https://api.whatsapp.com/send/?phone=5516998590133&text&type=phone_number&app_absent=0" target="_blank" rel="noopener noreferrer">
+                    <img src="dashboard.jpg" alt="Visualização de Dados" class="zoom-foto">
                 </a>
-                <p>ETL Script</p>
+                <p>Visualização de Dados</p>
             </div>
             <div class="imagem-item">
-                <a href="https://github.com/danylo-miranda/Relatorio-produtividade-diaria.git" target="_blank">
-                    <img src="produtividade.png" alt="Imagem 1" class="zoom-foto">
+                <a href="https://site-aniversario.s3.sa-east-1.amazonaws.com/index.html" target="_blank" rel="noopener noreferrer">
+                    <img src="Feliz.jpg" alt="Site de Aniversário" class="zoom-foto">
                 </a>
-                <p>Análise de Produtividade</p>
+                <p>Apresente o desenvolvimento dos seus filhos com um site dedicado</p>
             </div>
     </section> 
+    
+    <section class="sections" id="recomendacoes">
+        <h2>Recomendações</h2>
+        <div class="recomendacoes-container">
+            <div class="recomendacao-card">
+                <div class="recomendacao-content">
+                    <i class='bx bxs-quote-left'></i>
+                    <p> É com grande prazer que recomendo o Danylo como profissional altamente dedicado e atencioso.</p>
+                    <div class="recomendacao-autor">
+                        <img src="linkedin-profile1.jpg" alt="Foto da Juliana Gomes">
+                        <div class="autor-info">
+                            <h4><a href="https://www.linkedin.com/in/julianapvh/" target="_blank">Juliana Gomes</a></h4>
+                            <p>Bacharel em Sistemas de Informação e Analista de Dados</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="recomendacao-card">
+                <div class="recomendacao-content">
+                    <i class='bx bxs-quote-left'></i>
+                    <p>Ótimo profissional. Teve uma grande capacidade de gestão e organização do nosso projeto.</p>
+                    <div class="recomendacao-autor">
+                        <img src="linkedin-profile2.jpg" alt="Foto do Gideoni Santos">
+                        <div class="autor-info">
+                            <h4><a href="https://www.linkedin.com/in/gideoni-santos/" target="_blank">Gideoni Santos</a></h4>
+                            <p>Data Analytics | Python | SQL | PowerBI</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
 <!-- Rodapé -->
 
 <footer class="footer">
@@ -176,10 +226,10 @@
         <div class="footer-social">
             <h3>Redes Sociais</h3>
             <div class="footer-sci">
-                <a href="https://www.linkedin.com/in/adm-danylo-miranda/" target="_blank"><i class='bx bxl-linkedin-square'></i></a>
-                <a href="https://twitter.com/MirandaDanylo" target="_blank"><i class='bx bxl-twitter'></i></a>
-                <a href="https://github.com/danylo-miranda" target="_blank"><i class='bx bxl-github'></i></a>
-                <a href="https://api.whatsapp.com/send/?phone=5516998590133" target="_blank"><i class='bx bxl-whatsapp'></i></a>
+                <a href="https://www.linkedin.com/in/adm-danylo-miranda/" target="_blank" rel="noopener noreferrer"><i class='bx bxl-linkedin-square'></i></a>
+                <a href="https://twitter.com/MirandaDanylo" target="_blank" rel="noopener noreferrer"><i class='bx bxl-twitter'></i></a>
+                <a href="https://github.com/danylo-miranda" target="_blank" rel="noopener noreferrer"><i class='bx bxl-github'></i></a>
+                <a href="https://api.whatsapp.com/send/?phone=5516998590133" target="_blank" rel="noopener noreferrer"><i class='bx bxl-whatsapp'></i></a>
             </div>
         </div>
     </div>
