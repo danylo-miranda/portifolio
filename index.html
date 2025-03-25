@@ -14,6 +14,60 @@
         gtag('js', new Date());
 
         gtag('config', 'G-KFVBB2GZE2');
+
+        // Função para rastrear eventos
+        function trackEvent(eventName, eventParams = {}) {
+            gtag('event', eventName, eventParams);
+        }
+
+        // Rastrear cliques no botão Agendar
+        document.addEventListener('DOMContentLoaded', function() {
+            const agendarBtn = document.querySelector('.btn-box a');
+            if (agendarBtn) {
+                agendarBtn.addEventListener('click', function() {
+                    trackEvent('agendar_click', {
+                        'event_category': 'conversão',
+                        'event_label': 'botão_agendar'
+                    });
+                });
+            }
+
+            // Rastrear cliques nas redes sociais
+            const socialLinks = document.querySelectorAll('.home-sci a');
+            socialLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    const platform = this.querySelector('i').className.split('bxl-')[1];
+                    trackEvent('social_click', {
+                        'event_category': 'social',
+                        'event_label': platform
+                    });
+                });
+            });
+
+            // Rastrear cliques nos projetos
+            const projectLinks = document.querySelectorAll('.imagem-item a');
+            projectLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    const projectName = this.nextElementSibling.textContent;
+                    trackEvent('project_click', {
+                        'event_category': 'projetos',
+                        'event_label': projectName
+                    });
+                });
+            });
+
+            // Rastrear navegação entre seções
+            const navLinks = document.querySelectorAll('.navbar a');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    const section = this.getAttribute('href').replace('#', '');
+                    trackEvent('section_navigation', {
+                        'event_category': 'navegação',
+                        'event_label': section
+                    });
+                });
+            });
+        });
     </script>
     <link rel="stylesheet" href="style.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
