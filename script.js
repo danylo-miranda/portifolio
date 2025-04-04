@@ -23,9 +23,15 @@ document.addEventListener('click', (e) => {
     }
 });
 
-// Typed.js
+// Typed.js com palavras-chave otimizadas
 const typed = new Typed('#typed-text', {
-    strings: ['Analista de Dados', 'Gestor de E-commerce', 'Web Dev'],
+    strings: [
+        'Analista de Dados',
+        'Especialista em E-commerce',
+        'Business Intelligence',
+        'Otimização SEO',
+        'Gestão de Dados'
+    ],
     typeSpeed: 100,
     backSpeed: 60,
     loop: true
