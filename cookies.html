@@ -7,35 +7,66 @@
     <title>Política de Cookies | Danylo Miranda</title>
     <link rel="stylesheet" href="style.css">
     <style>
+        body {
+            background: #1f242d;
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem;
+        }
+
         .cookies-container {
             max-width: 800px;
-            margin: 2rem auto;
+            width: 100%;
+            margin: 0 auto;
             padding: 2rem;
-            background: var(--bg-color);
-            border-radius: 10px;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            background: #2c313c;
+            border-radius: 15px;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.3);
         }
 
         .cookies-title {
             color: var(--main-color);
-            font-size: 2rem;
-            margin-bottom: 1.5rem;
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
             text-align: center;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .cookies-section {
-            margin-bottom: 2rem;
+            margin-bottom: 2.5rem;
+            background: #363b47;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
 
         .cookies-section h2 {
             color: var(--main-color);
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
+            font-size: 1.8rem;
+            margin-bottom: 1.2rem;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .cookies-section h2::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--main-color);
+            border-radius: 2px;
         }
 
         .cookies-section p {
-            line-height: 1.6;
+            line-height: 1.8;
             margin-bottom: 1rem;
+            color: #e0e0e0;
         }
 
         .cookies-list {
@@ -44,35 +75,47 @@
         }
 
         .cookies-list li {
-            margin-bottom: 1rem;
-            padding: 1rem;
-            background: rgba(0, 0, 0, 0.05);
-            border-radius: 5px;
+            margin-bottom: 1.2rem;
+            padding: 1.2rem;
+            background: #2c313c;
+            border-radius: 8px;
+            border-left: 4px solid var(--main-color);
+            transition: transform 0.3s ease;
+        }
+
+        .cookies-list li:hover {
+            transform: translateX(5px);
         }
 
         .cookies-list li strong {
             color: var(--main-color);
+            font-size: 1.1rem;
+            display: block;
+            margin-bottom: 0.5rem;
         }
 
         .cookies-actions {
             display: flex;
-            gap: 1rem;
+            gap: 1.5rem;
             justify-content: center;
-            margin-top: 2rem;
+            margin-top: 3rem;
         }
 
         .cookies-btn {
-            padding: 0.8rem 1.5rem;
+            padding: 1rem 2rem;
             border: none;
-            border-radius: 5px;
+            border-radius: 8px;
             cursor: pointer;
             font-weight: 600;
+            font-size: 1.1rem;
             transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .cookies-btn.primary {
             background: var(--main-color);
-            color: white;
+            color: #fff;
         }
 
         .cookies-btn.secondary {
@@ -82,22 +125,40 @@
         }
 
         .cookies-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .cookies-btn.primary:hover {
+            background: #0ef;
+            color: #1f242d;
+        }
+
+        .cookies-btn.secondary:hover {
+            background: var(--main-color);
+            color: #1f242d;
         }
 
         @media (max-width: 768px) {
-            .cookies-container {
-                margin: 1rem;
+            body {
                 padding: 1rem;
             }
 
+            .cookies-container {
+                padding: 1.5rem;
+            }
+
             .cookies-title {
-                font-size: 1.5rem;
+                font-size: 2rem;
+            }
+
+            .cookies-section {
+                padding: 1.2rem;
             }
 
             .cookies-actions {
                 flex-direction: column;
+                gap: 1rem;
             }
 
             .cookies-btn {
