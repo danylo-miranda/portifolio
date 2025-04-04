@@ -23,6 +23,19 @@ document.addEventListener('click', (e) => {
     }
 });
 
+// Gerenciamento de Cookies
+function initializeAnalytics() {
+    const cookiesAccepted = localStorage.getItem('cookiesAccepted');
+    
+    if (cookiesAccepted === 'all') {
+        // Inicializa o Google Analytics
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'G-KFVBB2GZE2');
+    }
+}
+
 // Typed.js com palavras-chave otimizadas
 const typed = new Typed('#typed-text', {
     strings: [
@@ -37,6 +50,7 @@ const typed = new Typed('#typed-text', {
     loop: true
 });
 
+// Navegação suave
 document.addEventListener("DOMContentLoaded", () => {
     const navbarLinks = document.querySelectorAll(".navbar a");
 
@@ -44,33 +58,42 @@ document.addEventListener("DOMContentLoaded", () => {
         link.addEventListener("click", event => {
             event.preventDefault();
             
-            // Identificar o destino do link
             const targetHref = link.getAttribute("href");
 
             if (targetHref === "index.html" || targetHref === "#") {
-                // Scroll para o topo da página
                 window.scrollTo({
                     top: 0,
                     behavior: "smooth"
                 });
-
-                // Atualiza o hash na URL
                 history.pushState(null, "", "index.html");
             } else {
-                // Scroll suave para a seção
-                const targetId = targetHref.substring(1); // Remove o "#"
+                const targetId = targetHref.substring(1);
                 const targetSection = document.getElementById(targetId);
 
                 if (targetSection) {
                     targetSection.scrollIntoView({
-                        behavior: "smooth", // Suaviza o movimento
-                        block: "start"     // Rola até o topo da seção
+                        behavior: "smooth",
+                        block: "start"
                     });
-
-                    // Atualiza o hash na URL
                     history.pushState(null, "", `#${targetId}`);
                 }
             }
         });
     });
+
+    // Inicializa o Analytics após verificar os cookies
+    initializeAnalytics();
 });
+
+// Função para rastrear eventos com verificação de consentimento
+function trackEvent(eventName, eventParams = {}) {
+    const cookiesAccepted = localStorage.getItem('cookiesAccepted');
+    
+    if (cookiesAccepted === 'all') {
+        const sanitizedParams = {};
+        for (const [key, value] of Object.entries(eventParams)) {
+            sanitizedParams[key] = String(value).replace(/[<>]/g, '');
+        }
+        gtag('event', eventName, sanitizedParams);
+    }
+}

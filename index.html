@@ -22,6 +22,17 @@
     <meta property="og:url" content="https://danylo-miranda.github.io/portifolio/">
     <meta property="og:type" content="website">
     <title>Danylo Miranda | Analista de Dados & Especialista em E-commerce</title>
+    
+    <script>
+        // Verificação de cookies
+        document.addEventListener('DOMContentLoaded', function() {
+            const cookiesAccepted = localStorage.getItem('cookiesAccepted');
+            if (!cookiesAccepted) {
+                window.location.href = 'cookies.html';
+            }
+        });
+    </script>
+    
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-KFVBB2GZE2" rel="noopener noreferrer"></script>
     <script>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Política de Cookies - Danylo Miranda">
+    <title>Política de Cookies | Danylo Miranda</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .cookies-container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: var(--bg-color);
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .cookies-title {
+            color: var(--main-color);
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .cookies-section {
+            margin-bottom: 2rem;
+        }
+
+        .cookies-section h2 {
+            color: var(--main-color);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .cookies-section p {
+            line-height: 1.6;
+            margin-bottom: 1rem;
+        }
+
+        .cookies-list {
+            list-style: none;
+            padding: 0;
+        }
+
+        .cookies-list li {
+            margin-bottom: 1rem;
+            padding: 1rem;
+            background: rgba(0, 0, 0, 0.05);
+            border-radius: 5px;
+        }
+
+        .cookies-list li strong {
+            color: var(--main-color);
+        }
+
+        .cookies-actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        .cookies-btn {
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .cookies-btn.primary {
+            background: var(--main-color);
+            color: white;
+        }
+
+        .cookies-btn.secondary {
+            background: transparent;
+            border: 2px solid var(--main-color);
+            color: var(--main-color);
+        }
+
+        .cookies-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        @media (max-width: 768px) {
+            .cookies-container {
+                margin: 1rem;
+                padding: 1rem;
+            }
+
+            .cookies-title {
+                font-size: 1.5rem;
+            }
+
+            .cookies-actions {
+                flex-direction: column;
+            }
+
+            .cookies-btn {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cookies-container">
+        <h1 class="cookies-title">Política de Cookies</h1>
+        
+        <div class="cookies-section">
+            <h2>O que são cookies?</h2>
+            <p>Cookies são pequenos arquivos de texto que são armazenados no seu dispositivo quando você visita nosso site. Eles nos ajudam a melhorar sua experiência de navegação, entender como você usa nosso site e fornecer funcionalidades personalizadas.</p>
+        </div>
+
+        <div class="cookies-section">
+            <h2>Tipos de cookies que utilizamos</h2>
+            <ul class="cookies-list">
+                <li>
+                    <strong>Cookies Essenciais:</strong>
+                    <p>Necessários para o funcionamento básico do site. Eles permitem a navegação e o uso de recursos básicos.</p>
+                </li>
+                <li>
+                    <strong>Cookies de Desempenho:</strong>
+                    <p>Nos ajudam a entender como os visitantes interagem com o site, coletando informações anônimas para melhorar a experiência.</p>
+                </li>
+                <li>
+                    <strong>Cookies de Funcionalidade:</strong>
+                    <p>Permitem que o site lembre suas escolhas e forneça recursos personalizados.</p>
+                </li>
+                <li>
+                    <strong>Cookies de Marketing:</strong>
+                    <p>Usados para rastrear visitantes em sites. A intenção é exibir anúncios relevantes e envolventes para o usuário individual.</p>
+                </li>
+            </ul>
+        </div>
+
+        <div class="cookies-section">
+            <h2>Como gerenciar seus cookies</h2>
+            <p>Você pode controlar e/ou excluir cookies conforme desejar. Você pode excluir todos os cookies que já estão no seu computador e configurar a maioria dos navegadores para impedir que eles sejam colocados. No entanto, se você fizer isso, pode ter que ajustar manualmente algumas preferências toda vez que visitar um site.</p>
+        </div>
+
+        <div class="cookies-section">
+            <h2>Atualizações desta política</h2>
+            <p>Podemos atualizar nossa Política de Cookies periodicamente. Recomendamos que você verifique esta página regularmente para se manter informado sobre como estamos usando cookies.</p>
+        </div>
+
+        <div class="cookies-actions">
+            <button class="cookies-btn primary" onclick="acceptCookies()">Aceitar Todos os Cookies</button>
+            <button class="cookies-btn secondary" onclick="rejectCookies()">Rejeitar Cookies Não Essenciais</button>
+        </div>
+    </div>
+
+    <script>
+        function acceptCookies() {
+            localStorage.setItem('cookiesAccepted', 'all');
+            window.location.href = 'index.html';
+        }
+
+        function rejectCookies() {
+            localStorage.setItem('cookiesAccepted', 'essential');
+            window.location.href = 'index.html';
+        }
+
+        // Verifica se o usuário já fez uma escolha
+        document.addEventListener('DOMContentLoaded', function() {
+            const cookiesAccepted = localStorage.getItem('cookiesAccepted');
+            if (cookiesAccepted) {
+                window.location.href = 'index.html';
+            }
+        });
+    </script>
+</body>
+</html> 
