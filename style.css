@@ -86,6 +86,7 @@ body {
     position: relative;
     z-index: 2;
     color: #ffffff;
+    text-align: left;
 }
 
 .home-content h1 {
@@ -152,77 +153,48 @@ body {
 }
 
 .home-sci {
-    position: absolute;
-    bottom: 3%;
-    left: 14%;
-    width: auto; /* Remova a largura fixa para que os ícones se ajustem dinamicamente */
+    position: relative;
+    bottom: auto;
+    left: auto;
+    margin-top: 3rem;
+    justify-content: center;
+    width: 100%;
+    padding: 0 1rem;
     display: flex;
-    justify-content: center; /* Centraliza o grupo de ícones */
-    gap: 10px; /* Define o espaço entre os ícones */
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    z-index: 2;
 }
 
-
 .home-sci a {
-    position: relative;
-    display: inline-flex;
+    width: 45px;
+    height: 45px;
+    font-size: 1.3rem;
+    display: flex;
     justify-content: center;
     align-items: center;
-    width: 40px;
-    height: 40px;
     background: transparent;
     border: 2px solid #00abf0;
     border-radius: 50%;
-    font-size: 20px;
     color: #00abf0;
     text-decoration: none;
-    z-index: 1;
-    overflow: hidden;
-    transition: .5s;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .home-sci a:hover {
-    color: #ffffff;
-}
-
-.home-sci a::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 0;
-    height: 100%;
     background: #00abf0;
-    z-index: -1;
-    transition: .5s;
+    color: #ffffff;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
-.home-sci a:hover::before {
-    width: 100%;
-}
-
-@media (max-width: 768px) {
-    .home-sci {
-        gap: 10px; /* Reduz o espaço em telas menores */
-    }
-}
-
-.home-content .btn-box {
-    position: relative;
+.btn-box {
     display: flex;
-    justify-content: space-between;
-    width: 345px;
-    height: 50px;
-}
-
-.home-content .btn-box::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    width: 100%;
-    height: 100%;
-    animation: showRight 1s ease forwards;
-    animation-delay: .1.9s;
+    justify-content: flex-start;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
     z-index: 2;
 }
 
@@ -232,7 +204,7 @@ body {
     justify-content: center;
     align-items: center;
     width: 150px;
-    height: 100%;
+    height: 50px;
     background: #00abf0;
     border: 2px solid #00abf0;
     border-radius: 8px;
@@ -243,11 +215,14 @@ body {
     letter-spacing: 1px;
     z-index: 1;
     overflow: hidden;
-    transition: .5s;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .btn-box a:hover {
     color: #00abf0;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
 }
 
 .btn-box a:nth-child(2) {
@@ -274,18 +249,74 @@ body {
     z-index: -1;
     transition: .5s;
 }
- 
+
 .btn-box a:hover::before {
     width: 100%;
 }
 
-@media (max-width: 480px) {
+@media (max-width: 768px) {
+    .home-content {
+        padding: 0 1rem;
+        text-align: center;
+        max-width: 100%;
+        left: 0;
+        transform: none;
+        margin-bottom: 3rem;
+    }
+
+    .btn-box {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 3rem;
+    }
+
     .btn-box a {
-        width: 120px; /* Reduz a largura do botão */
-        font-size: 14px; /* Ajusta o tamanho do texto */
+        width: 220px;
+        height: 55px;
+        font-size: 18px;
+        border-radius: 10px;
+    }
+
+    .home-sci {
+        margin-top: 2rem;
+        gap: 1.2rem;
+    }
+
+    .home-sci a {
+        width: 40px;
+        height: 40px;
+        font-size: 1.2rem;
     }
 }
 
+@media (max-width: 480px) {
+    .home-content {
+        margin-bottom: 2.5rem;
+    }
+
+    .btn-box {
+        margin-bottom: 2.5rem;
+    }
+
+    .btn-box a {
+        width: 200px;
+        height: 50px;
+        font-size: 16px;
+        border-radius: 8px;
+    }
+
+    .home-sci {
+        margin-top: 1.5rem;
+        gap: 1rem;
+    }
+
+    .home-sci a {
+        width: 38px;
+        height: 38px;
+        font-size: 1.1rem;
+    }
+}
 
 @keyframes showRight {
     100% {
