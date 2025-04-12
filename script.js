@@ -40,10 +40,9 @@ function initializeAnalytics() {
 const typed = new Typed('#typed-text', {
     strings: [
         'Analista de Dados',
-        'Especialista em E-commerce',
+        'Gestão em E-commerce',
         'Business Intelligence',
-        'Otimização SEO',
-        'Gestão de Dados'
+        'Otimização SEO'
     ],
     typeSpeed: 100,
     backSpeed: 60,
