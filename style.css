@@ -693,3 +693,201 @@ img {
         font-size: 0.9rem;
     }
 }
+
+.servicos-cta {
+    text-align: center;
+    margin-top: 3rem;
+    padding: 2rem;
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    border: 1px solid var(--main-color);
+}
+
+.servicos-cta p {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    color: var(--main-color);
+}
+
+.servicos-cta .btn-box {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    background: var(--main-color);
+    color: #1f242d;
+    font-weight: 600;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.servicos-cta .btn-box:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 768px) {
+    .servicos-cta {
+        margin-top: 2rem;
+        padding: 1.5rem;
+    }
+
+    .servicos-cta p {
+        font-size: 1.1rem;
+    }
+}
+
+.servicos-titulo {
+    margin-top: 3rem;
+    color: var(--main-color);
+    font-size: 2.5rem;
+    text-align: center;
+}
+
+.consultoria-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.consultoria-grid .imagem-item {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.consultoria-grid .imagem-item:hover {
+    transform: translateY(-5px);
+    border-color: var(--main-color);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.consultoria-grid .imagem-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+.consultoria-grid .imagem-item p {
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #ededed;
+}
+
+@media (max-width: 1200px) {
+    .consultoria-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .consultoria-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .servicos-titulo {
+        font-size: 2rem;
+    }
+    
+    .consultoria-grid .imagem-item {
+        padding: 1rem;
+    }
+    
+    .consultoria-grid .imagem-item img {
+        height: 180px;
+    }
+}
+
+.servicos {
+    padding: 4rem 2rem;
+    background-color: #000000;
+}
+
+.servicos-titulo {
+    text-align: center;
+    color: #fefeff;
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.servicos-descricao {
+    text-align: center;
+    color: #aaa7a7;
+    font-size: 1.2rem;
+    margin-bottom: 3rem;
+}
+
+.consultoria-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.imagem-item {
+    background: white;
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.imagem-item:hover {
+    transform: translateY(-5px);
+}
+
+.imagem-item img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.imagem-item p {
+    color: #333;
+    font-size: 1rem;
+    line-height: 1.5;
+}
+
+.cta-container {
+    text-align: center;
+    margin-top: 3rem;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background-color: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.cta-button:hover {
+    background-color: #0056b3;
+}
+
+@media (max-width: 1200px) {
+    .consultoria-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .consultoria-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .servicos-titulo {
+        font-size: 2rem;
+    }
+    
+    .imagem-item {
+        padding: 1rem;
+    }
+}
