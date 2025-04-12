@@ -41,8 +41,7 @@ const typed = new Typed('#typed-text', {
     strings: [
         'Analista de Dados',
         'Gestão em E-commerce',
-        'Business Intelligence',
-        'Otimização SEO'
+        'Business Intelligence'
     ],
     typeSpeed: 100,
     backSpeed: 60,
